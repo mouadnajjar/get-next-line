@@ -50,7 +50,7 @@ This project emphasizes:
    ```bash
    git clone https://github.com/mouadnajjar/get-next-line.git
    cd get-next-line
-     
+
 2. Compile with your preferred buffer size:
 ```bash
   gcc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c main.c -o gnl
@@ -60,6 +60,31 @@ Run the program:
 ```bash
 ./gnl [file_name]
 ```
+### 🧪 Testing
+
+To test the function, create a main.c file with various scenarios. Here's an example:
+```bash
+#include "get_next_line.h"
+#include <fcntl.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int fd = open("test.txt", O_RDONLY);
+    char *line;
+
+    if (fd < 0)
+        return (1);
+    while ((line = get_next_line(fd)))
+    {
+        printf("%s", line);
+        free(line);
+    }
+    close(fd);
+    return (0);
+}
+```
+     
    
 ### 🌟 Acknowledgments
 
@@ -68,7 +93,7 @@ Special thanks to the 42 Network for providing this challenging yet rewarding pr
 ### 📚 Resources
 
     42 Network
-    Project PDF (if publicly available)
+    Project PDF : https://cdn.intra.42.fr/pdf/pdf/143534/en.subject.pdf
 
 ### 🧑‍💻 Author
 
