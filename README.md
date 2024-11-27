@@ -50,3 +50,27 @@ This project emphasizes:
    ```bash
    git clone https://github.com/mouadnajjar/get-next-line.git
    cd get-next-line
+     
+2. Compile with your preferred buffer size:
+```bash
+  gcc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c main.c -o gnl
+```
+
+Run the program:
+```bash
+./gnl [file_name]
+```
+   
+### 🌟 Acknowledgments
+
+Special thanks to the 42 Network for providing this challenging yet rewarding project. This was an excellent opportunity to deepen my understanding of low-level programming and memory management.
+
+### 📚 Resources
+
+    42 Network
+    Project PDF (if publicly available)
+
+### 🧑‍💻 Author
+
+    Mouad Najjar
+    GitHub
